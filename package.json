@@ -1,0 +1,13 @@
+{
+  "name": "ddg-api",
+  "version": "0.1.0",
+  "main": "./lib/index.js",
+  "author": "Luke Wendling <luke@lukewendling.com>",
+  "license": "BSD",
+  "description": "A Node.JS module to query the duckduckgo instant answers API.",
+  "keywords": ["duckduckgo", "api"],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/lukewendling/ddg-api.git"
+  }
+}
