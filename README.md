@@ -1,11 +1,11 @@
-# ddg-api - DuckDuckGo instant answer API node module
+# node-ddg-api - DuckDuckGo instant answer API node module
 
 > Access the [DuckDuckGo](https://duckduckgo.com/api) API with [Nodejs](http://nodejs.org).
 
 
 ## Installation
 
-To install via NPM type the following: `npm install ddg-api`
+To install via NPM type the following: `npm install node-ddg-api`
 
 You can also install via git by cloning:
 
@@ -16,7 +16,7 @@ git clone https://github.com/lukewendling/ddg-api.git /path/to/project`
 ## Usage
 
 ```js
-var DDG = require('ddg-api').DDG;
+var DDG = require('node-ddg-api').DDG;
 
 var ddg = new DDG('my-app-name');
 
