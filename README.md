@@ -24,3 +24,7 @@ ddg.instantAnswer('superman', {skip_disambig: '0'}, function(err, response) {
   console.log(response);
 });
 ```
+
+```bash
+node-ddg superman -t my-app-name --skip_disambig 0
+```
