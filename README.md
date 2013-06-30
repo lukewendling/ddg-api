@@ -7,10 +7,12 @@
 
 To install via NPM type the following: `npm install node-ddg-api`
 
+(use `npm install -g node-ddg-api` to add node-ddg bin script to your path)
+
 You can also install via git by cloning:
 
 ```shell
-git clone https://github.com/lukewendling/ddg-api.git /path/to/project`
+git clone https://github.com/lukewendling/ddg-api.git /path/to/project
 ```
 
 ## Usage
