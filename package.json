@@ -9,8 +9,14 @@
   "dependencies": {
     "optimist": "~0.6"
   },
+  "devDependencies": {
+    "nodeunit": ">=0.7"
+  },
   "bin": {
     "node-ddg": "./bin/node-ddg.js"
+  },
+  "scripts": {
+    "test": "./node_modules/.bin/nodeunit test"
   },
   "repository": {
     "type": "git",
