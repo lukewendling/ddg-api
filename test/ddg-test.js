@@ -2,15 +2,18 @@ var DDG = require('../lib/ddg');
 
 exports.testConstructor = {
 
+  setUp: function (callback) {
+    this.ddg = new DDG('test-app');
+    callback();
+  },
+
   'constructor sets app name' : function (test) {
-    var ddg = new DDG('test-app');
-    test.equal(ddg.appName, 'test-app');
+    test.equal(this.ddg.appName, 'test-app');
     test.done();
   },
 
   'constructor sets default config' : function (test) {
-    var ddg = new DDG('test-app');
-    test.deepEqual(ddg.config, { hostname: 'api.duckduckgo.com', port: 80 });
+    test.deepEqual(this.ddg.config, { hostname: 'api.duckduckgo.com', port: 80 });
     test.done();
   },
 
@@ -24,23 +27,25 @@ exports.testConstructor = {
 
 exports.testInstantAnswer = {
 
+  setUp: function (callback) {
+    this.ddg = new DDG('test-app');
+    callback();
+  },
+
   'returns result of request' : function (test) {
-    var ddg = new DDG('test-app');
+    this.ddg.query = function () { return 'super' };
 
-    ddg.query = function () { return 'super' };
-
-    test.equal(ddg.instantAnswer('superman'), 'super');
+    test.equal(this.ddg.instantAnswer('superman'), 'super');
     test.done();
   },
 
   'builds query string' : function (test) {
-    var ddg = new DDG('test-app');
     var opts = {skip_disambig: '1', pretty: '0', no_html: '1', no_redirect: '1'};
 
-    ddg.query = function () { return 'super' };
-    ddg.instantAnswer('superman', opts);
+    this.ddg.query = function () { return 'super' };
+    this.ddg.instantAnswer('superman', opts);
 
-    test.equal(ddg.queryString, "/?q=superman&pretty=0&no_html=1&no_redirect=1&skip_disambig=1&format=json&t=test-app");
+    test.equal(this.ddg.queryString, "/?q=superman&pretty=0&no_html=1&no_redirect=1&skip_disambig=1&format=json&t=test-app");
     test.done();
   }
 };
