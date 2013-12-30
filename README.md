@@ -2,6 +2,9 @@
 
 > Access the [DuckDuckGo](https://duckduckgo.com/api) API with [Nodejs](http://nodejs.org).
 
+## Dependencies
+
+Only depends on [optimist](https://npmjs.org/package/optimist) for the cli but the core has no dependencies.
 
 ## Installation
 
@@ -27,6 +30,13 @@ ddg.instantAnswer('superman', {skip_disambig: '0'}, function(err, response) {
 });
 ```
 
-```bash
+```shell
 node-ddg superman -t my-app-name --skip_disambig 0
+```
+
+## Running tests (after cloning)
+
+```shell
+npm install
+npm test
 ```
